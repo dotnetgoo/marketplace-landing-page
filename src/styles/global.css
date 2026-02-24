@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Amazon Color Palette */
+    --amazon-orange: #FF9900;
+    --amazon-dark: #232F3E;
+    --amazon-light: #37475A;
+    --amazon-blue: #146EB4;
+    --amazon-accent: #FEBD69;
+    --amazon-bg: #FFFFFF;
+    --amazon-gray-light: #F3F3F3;
+    --amazon-gray: #E7E7E7;
+    --amazon-text: #0F1111;
+    --amazon-text-secondary: #565959;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p {
+    @apply text-base text-gray-700 leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#FF9900] hover:bg-[#FF9900]/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-[#232F3E] hover:bg-[#37475A] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#FF9900] text-[#FF9900] hover:bg-[#FF9900] hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 p-6;
+  }
+
+  .section {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-[#232F3E] via-[#37475A] to-[#232F3E];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#FF9900] to-[#FEBD69] bg-clip-text text-transparent;
+  }
+
+  .smooth-shadow {
+    box-shadow: 0 10px 40px rgba(35, 47, 62, 0.1);
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+}
+
+@layer utilities {
+  .text-amazon-orange {
+    color: #FF9900;
+  }
+
+  .text-amazon-dark {
+    color: #232F3E;
+  }
+
+  .text-amazon-light {
+    color: #37475A;
+  }
+
+  .text-amazon-blue {
+    color: #146EB4;
+  }
+
+  .bg-amazon-orange {
+    background-color: #FF9900;
+  }
+
+  .bg-amazon-dark {
+    background-color: #232F3E;
+  }
+
+  .bg-amazon-light {
+    background-color: #37475A;
+  }
+
+  .bg-amazon-gray-light {
+    background-color: #F3F3F3;
+  }
+
+  .border-amazon-orange {
+    border-color: #FF9900;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #FF9900;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #FF9900;
+  color: white;
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-[#FF9900] ring-offset-2;
+}
