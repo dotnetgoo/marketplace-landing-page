@@ -5,6 +5,7 @@ import ProductShowcase from './components/ProductShowcase'
 import Testimonials from './components/Testimonials'
 import DealsPage from './pages/DealsPage'
 import AboutPage from './pages/AboutPage'
+import SearchPage from './pages/SearchPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function LandingPage() {
@@ -139,6 +140,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/deals" element={<DealsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
